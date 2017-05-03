@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>Demo Page</title>
+<link href=icon_HPBeats.ico rel=icon >
+<script type="text/javascript">
+function fun()
+{
+   var res=true;
+   
+   var v=document.frm.nm.value;
+   if(v=="")
+   {
+    document.getElementById('a').innerHTML="*";
+    res=false;
+   }
+   else
+   {
+    document.getElementById('a').innerHTML="";
+   }
+   
+   if(document.frm.r1[0].checked || document.frm.r1[1].checked)
+   {
+    document.getElementById('b').innerHTML="";
+   }
+   else
+   {
+    document.getElementById('b').innerHTML="*";
+    res=false;
+   }
+   
+   v=document.frm.pwd.value;
+   alert(v);
+   var pwd_reg=/(?=.*[A-Z])(?=.*[0-9])(?=.*[@!_])(?=.*[a-z])[A-Za-z0-9@!_]{5,15}/;
+   if(pwd_reg.test(v))
+   {
+    document.getElementById('c').innerHTML="";
+   }
+   else
+   {
+    document.getElementById('c').innerHTML="*";
+    res=false;
+   }
+   
+   v=document.getElementsByName("chk[]");
+   alert(v);
+   var r=0;
+   for(i=0;i<4;i++)
+   {
+    if(v[i].checked)
+    r=1;
+   }
+   if(r==0)
+   {
+    document.getElementById('d').innerHTML="*";
+    res=false;
+   }
+   else
+   document.getElementById('d').innerHTML="";
+   
+   v=document.frm.qul.value;
+   if(v=="~~Select~~")
+   {
+    document.getElementById('e').innerHTML="*";
+    res=false;
+   }
+   else
+    document.getElementById('e').innerHTML="";   
+   
+   if(res)
+   return true;
+   else
+   return false;
+   
+}
+function CheckNum(event)
+{
+    if(event.keyCode>=48 && event.keyCode<=57)
+    return true;
+    else
+    return false;
+}
+
+function PwdStr()
+{
+    var v=document.frm.pwd.value.length;
+    if(v>=1 && v<=4)
+    document.getElementById('c').innerHTML="Very week...";
+    else if(v>=5 && v<=9)
+    document.getElementById('c').innerHTML="Password ok...";
+    else if(v>=10 && v<=15)
+    document.getElementById('c').innerHTML="Password strong...";
+    
+}
+ function printPage()
+ {
+    this.print();
+ }
+
+
+
+
+</script>
+
+</head>
+<body background=Images/back.png text=blue >
+
+<form name=frm action=Read.php method=post onsubmit="return fun()">
+
+
+<hr color=orange size=15 width=100% >
+
+<h1 align=center>This Is HTML Document </h1>
+
+<hr color=green size=15 >
+
+<table border=3 cellspacing=5 cellpadding=5 bordercolor=red align=center>
+
+
+<tr><td align=center colspan=2>Registration</td></tr>
+
+<tr><td>User Name</td><td><input type=text name=nm  /><font color=red id=a ></font> </td></tr>
+
+
+<tr><td>Password</td><td><input type=password name=pwd onkeydown="PwdStr()" /><font color=red id=c ></font> </td></tr>
+
+<tr><td>Date of Birth</td><td><input type=date name=dob /> </td></tr>
+
+<tr><td>Mob No</td><td><input type=mob maxlength="10" name=mob onkeypress="return CheckNum(event)" /> </td></tr>
+<tr><td>User EMail</td><td><input type=email name=email /> </td></tr>
+
+
+<tr><td>Address</td><td><textarea name=addr></textarea></td></tr>
+
+
+<tr><td>Gender</td><td><input type=radio name=r1 value=Male >Male<input type=radio name=r1 value=Female>Female<font color=red id=b></font></td></tr>
+
+
+
+<tr><td>Hobbies</td><td>
+<input type=checkbox name=chk[] value=Read >Reading<font color=red id=d ></font><br>
+<input type=checkbox name=chk[] value=Sleep>Sleeping<br>
+<input type=checkbox name=chk[] value=Dance>Dancing <br>
+<input type=checkbox name=chk[] value=Swim>Swimming <br>
+</td>
+
+
+<tr><td>Qualification</td><td>
+<select name=qul>
+<option>~~Select~~</option>
+<option>B Tech</option>
+<option>M Tech</option>
+<option>MBA</option>
+<option>BBA</option>
+</select><font id=e color=red></font>
+</td></tr>
+
+<tr><td>Upload Your Resume</td>
+<td><input type=file name=upload /></td></tr>
+
+
+
+<tr><td colspan=2 align=center>
+<input type=submit name=sub />
+<input type=reset name=res />
+<input type=button name=btn value=Button onclick="printPage()"  />
+
+
+</td></tr>
+
+<tr><td colspan=2 align=center>&yen &reg &copy HP &nbsp &nbsp &nbsp &nbsp &nbsp             Educations</td></tr>
+
+
+
+<caption align=bottom>Table 1.1</caption>
+
+</table>
+
+
+
+
+
+
+</form>
+</body>
+</html>
