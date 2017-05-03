@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css" >
+.btn
+{
+   height: 30px;
+   width: 90px;
+   border:3px solid navy; 
+   border-radius:10px;
+}
+
+.btn:hover
+{
+    box-shadow: 0px 0px 5px 5px white;
+    border-radius:10px;
+    background-color: navy;
+    color:white;
+}
+
+
+
+</style>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="gencyolcu" />
+   <link href="Stylesheet.css" rel="stylesheet" />
+	<title>Untitled 1</title>
+</head>
+<body>
+<table border=3 cellspacing=5 cellpadding=5 bordercolor=red align=center>
+
+
+<tr><th align=center colspan=2>Registration</th></tr>
+
+<tr><td>User Name</td><td><input type=text name=nm  /><font color=red id=a ></font> </td></tr>
+
+
+<tr id="alt"><td>Password</td><td><input type=password name=pwd onkeydown="PwdStr()" /><font color=red id=c ></font> </td></tr>
+
+<tr><td>Date of Birth</td><td><input type=date name=dob /> </td></tr>
+
+<tr id="alt"><td>Mob No</td><td><input type=text maxlength="10" name=mob onkeypress="return CheckNum(event)" /> </td></tr>
+<tr><td>User EMail</td><td><input type=email name=email /> </td></tr>
+
+
+<tr id="alt"><td>Address</td><td><textarea name=addr></textarea></td></tr>
+
+
+<tr><td>Gender</td><td><input type=radio name=r1 value=Male >Male<input type=radio name=r1 value=Female>Female<font color=red id=b></font></td></tr>
+
+
+
+<tr id="alt"><td>Hobbies</td><td>
+<input type=checkbox name=chk[] value=Read >Reading<font color=red id=d ></font><br>
+<input type=checkbox name=chk[] value=Sleep>Sleeping<br>
+<input type=checkbox name=chk[] value=Dance>Dancing <br>
+<input type=checkbox name=chk[] value=Swim>Swimming <br>
+</td>
+
+
+<tr><td>Qualification</td><td>
+<select name=qul>
+<option>~~Select~~</option>
+<option>B Tech</option>
+<option>M Tech</option>
+<option>MBA</option>
+<option>BBA</option>
+</select><font id=e color=red></font>
+</td></tr>
+
+<tr><td style="background-color: yellow; color:black">Upload Your Resume</td>
+<td><input type=file name=upload /></td></tr>
+
+
+
+<tr><td colspan=2 align=center>
+<input type=submit name=sub class="btn" />
+<input type=reset name=res class="btn" />
+<input type=button name=btn value=Button onclick="printPage()" class="btn"  />
+
+
+</td></tr>
+
+<tr><td colspan=2 align=center>&yen &reg &copy HP &nbsp &nbsp &nbsp &nbsp &nbsp             Educations</td></tr>
+
+
+
+<caption align=bottom>Table 1.1</caption>
+
+</table>
+
+
+
+
+
+
+
+</body>
+</html>
